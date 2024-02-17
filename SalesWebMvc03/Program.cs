@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using SalesWebMvc03.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<SalesWebMvc03Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SalesWebMvc03Context") ?? throw new InvalidOperationException("Connection string 'SalesWebMvc03Context' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
