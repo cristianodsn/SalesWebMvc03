@@ -14,6 +14,6 @@ namespace SalesWebMvc03.Data
         {
         }
 
-        public DbSet<SalesWebMvc03.Models.Department> Department { get; set; } = default!;
+        public DbSet<SalesWebMvc03.Models.Department> Department { get; set; } = default!; 
     }
 }
